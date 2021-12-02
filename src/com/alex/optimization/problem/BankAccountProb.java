@@ -8,6 +8,12 @@ import java.util.List;
 
 public class BankAccountProb {
 
+	private static final long MEGABYTE = 1024L * 1024L;
+
+    public static long bytesToMegabytes(long bytes) {
+        return bytes / MEGABYTE;
+    }
+    
 	// retrieves list of accounts which are owned by the joint owners of other accounts
 	public static List<Account> getJointOwnerAccountList(List<Account> accountList){
 		List<Account> answer = new ArrayList<Account>();
@@ -161,14 +167,21 @@ public class BankAccountProb {
 		System.out.println("Completed getJointOwnerAccountList in " + timeElapsed + " MILLIS");
 		
 		System.out.println("Result output of accounts for Test case 1 showing only accounts owned by joint account owners:");
-		for (Account item : testCase1ResultList) {
-			System.out.println(item.getAccountUser() + " " + item.getJointAccountUser() + " " + item.getAccountType());
-		}
+		//for (Account item : testCase1ResultList) {
+			//System.out.println(item.getAccountUser() + " " + item.getJointAccountUser() + " " + item.getAccountType());
+		//}
 		
 		timeElapsed = Duration.between(startTotalRun, finish).toMillis();
 		System.out.println("Completed ALL PROCESSING of " + String.valueOf(max - min) + " accounts in " + timeElapsed + " MILLIS!");
 		
-		
+		// Get the Java runtime
+        Runtime runtime = Runtime.getRuntime();
+        // Run the garbage collector
+        runtime.gc();
+        // Calculate the used memory
+        long memory = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Used memory is bytes: " + memory);
+        System.out.println("Used memory is megabytes: " + bytesToMegabytes(memory));
 	}
 
 	public static class Account implements Comparable<Object> {

@@ -34,3 +34,17 @@ A sortable account entity representative of non-PII information.
 
 Processing 50 million accounts takes ~37 seconds and is under the 1-2 minute threshold of a typical financial batch.  The code is condensed into one file for quick view.  
 
+Starting generation of 49999500 accounts
+Completed generation of accounts in 14222 millis
+Starting getJointOwnerAccountList()
+getJointOwnerAccountList() - Starting first loop of 49999514 accounts
+getJointOwnerAccountList() - Completed first loop of accounts in 2161 MILLIS
+getJointOwnerAccountList() - Starting int conversion of  50004 joint user accounts
+getJointOwnerAccountList() - Completed int conversion of joint user accounts in 8804 MILLIS
+getJointOwnerAccountList() - Starting final account list comparison of  49999514
+getJointOwnerAccountList() - Completed final account list comparison in 3242 MILLIS
+Completed getJointOwnerAccountList in 14382 MILLIS
+Result output of accounts for Test case 1 showing only accounts owned by joint account owners:
+Completed ALL PROCESSING of 49999500 accounts in 28610 MILLIS!
+Used memory is bytes: 3885324968
+Used memory is megabytes: 3705
