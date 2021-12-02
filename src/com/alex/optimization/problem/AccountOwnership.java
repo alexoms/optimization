@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BankAccountProb {
+public class AccountOwnership {
 
 	private static final long MEGABYTE = 1024L * 1024L;
 	

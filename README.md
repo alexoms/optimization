@@ -9,7 +9,7 @@ code for helping microservice developers build a foundation of knowledge.
 ```
 
 
-## com.alex.optimization.problem.BankAccountProb
+## com.alex.optimization.problem.AccountOwnership
 
 ### Use-case: 
 
@@ -21,7 +21,7 @@ Identifying joint account ownership by secondary account owners
 An account and account owner, in any business domain may have multiple relationships with other entities.  One interesting scenario is when accounts have multiple ownership.  Let's relate to this by using a limited financial institution model as an example.  
 
 Known dataset characteristics:
-1.  Bank account owners have checking and savings accounts
+1.  Account owners have checking, savings, credit card, and money market accounts
 2.  Account owners may have joint ownership with other account owners such as family, etc.
 3.  No PII information is available.  Simply account ids, account type, account owner id, and joint account owner id.
 
