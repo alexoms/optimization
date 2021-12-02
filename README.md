@@ -15,17 +15,17 @@ Bank account owners of checking and savings accounts may have joint ownership wi
 
 ### Components:
 
-#### List<Account> getJointOwnerAccountList(List<Account> accountList)
+````List<Account> getJointOwnerAccountList(List<Account> accountList)````
 
 This class demonstrates reduction of an O(n log n) problem to O(n).  First, we generate 50 million accounts with a random dispersement of joint ownership across some of the accounts.  This code can further be refactored into junit tests at a later date.  Then we convert the account string list to int array for comparison use.  Then iterate through list and add accts primarly owned by the joint account owner.
 
-#### int[] convertStringListToIntegerArray(List<String> accountNumberStringList, int min, int max)
+````int[] convertStringListToIntegerArray(List<String> accountNumberStringList, int min, int max)````
 
 The helper class lets us look at an integer array position's value where the position is the same number as the account/joint owner account id.  This way we don't have to keep iterating through the joint owner account list.  When there is a joint account owner id, we store the value as 1 for quick lookup.  
 In another word, if the array number's value is 1, we have a joint account user with that number.  If it is 0 (default int val as int is primitive), we dont have a joint account with that number.  
 This speeds up the lookup so it is no longer O(n log n).  Also it is already sorted.
 
-#### class Account implements Comparable\<Object\>
+````class Account implements Comparable<Object>````
 
 A sortable account entity representative of non-PII information.
 
