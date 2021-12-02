@@ -1,4 +1,4 @@
-# optimization
+# Samples of optimization
 
 ## com.alex.optimization.problem.BankAccountProb
 
