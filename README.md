@@ -13,7 +13,7 @@ Manual joining of banking account information
 Bank account owners of checking and savings accounts may have joint ownership with family, etc.  A common need is to run a batch job against all the bank accounts to perform some sort of action such as sending an email or assembling marketing metrics.  So we would need to identify programmatically which accounts are owned by the joint account owner.
 
 
-### What:
+### Components:
 
 #### List<Account> getJointOwnerAccountList(List<Account> accountList)
 
@@ -25,7 +25,7 @@ The helper class lets us look at an integer array position's value where the pos
 In another word, if the array number's value is 1, we have a joint account user with that number.  If it is 0 (default int val as int is primitive), we dont have a joint account with that number.  
 This speeds up the lookup so it is no longer O(n log n).  Also it is already sorted.
 
-#### class Account implements Comparable<Object>
+#### class Account implements Comparable\<Object\>
 
 A sortable account entity representative of non-PII information.
 
