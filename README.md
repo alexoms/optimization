@@ -34,17 +34,18 @@ A sortable account entity representative of non-PII information.
 
 Processing 50 million accounts takes ~37 seconds and is under the 1-2 minute threshold of a typical financial batch.  The code is condensed into one file for quick view.  
 
+Set maximum available memory for the JVM to 4000 Megabyte. Constrain in testing to not use more heap memory than defined via parameter: -Xmx4000m
+
 Starting generation of 49999500 accounts
-Completed generation of accounts in 14222 millis
+Completed generation of accounts in 18915 millis
 Starting getJointOwnerAccountList()
 getJointOwnerAccountList() - Starting first loop of 49999514 accounts
-getJointOwnerAccountList() - Completed first loop of accounts in 2161 MILLIS
+getJointOwnerAccountList() - Completed first loop of accounts in 2160 MILLIS
 getJointOwnerAccountList() - Starting int conversion of  50004 joint user accounts
-getJointOwnerAccountList() - Completed int conversion of joint user accounts in 8804 MILLIS
+getJointOwnerAccountList() - Completed int conversion of joint user accounts in 13553 MILLIS
 getJointOwnerAccountList() - Starting final account list comparison of  49999514
-getJointOwnerAccountList() - Completed final account list comparison in 3242 MILLIS
-Completed getJointOwnerAccountList in 14382 MILLIS
+getJointOwnerAccountList() - Completed final account list comparison in 3100 MILLIS
+Completed getJointOwnerAccountList in 18969 MILLIS
 Result output of accounts for Test case 1 showing only accounts owned by joint account owners:
-Completed ALL PROCESSING of 49999500 accounts in 28610 MILLIS!
-Used memory is bytes: 3885324968
-Used memory is megabytes: 3705
+Completed ALL PROCESSING of 49999500 accounts in 37887 MILLIS!
+Used memory (Mb): 3705
