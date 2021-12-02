@@ -1,7 +1,5 @@
 # Samples of optimization
 
-## com.alex.optimization.problem.BankAccountProb
-
 ```
 Disclaimer:  The following code is the intellectual property of Alex Chang and is original in every
 way.  If any lines of code are duplicated, Alexander reserves all rights of originality.  The code specifies
@@ -9,6 +7,9 @@ generic business use cases for any business and is not related to any specific c
 to test developers in data structure optimization knowledge and framework code for helping microservice developers
 build a foundation of knowledge.
 ```
+
+
+## com.alex.optimization.problem.BankAccountProb
 
 ### Use-case: 
 
