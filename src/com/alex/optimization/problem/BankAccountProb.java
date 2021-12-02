@@ -11,8 +11,8 @@ public class BankAccountProb {
 	private static final long MEGABYTE = 1024L * 1024L;
 	
 	public static long bytesToMegabytes(long bytes) {
-        return bytes / MEGABYTE;
-    }
+		return bytes / MEGABYTE;
+	}
     
 	// retrieves list of accounts which are owned by the joint owners of other accounts
 	public static List<Account> getJointOwnerAccountList(List<Account> accountList){
