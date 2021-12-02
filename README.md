@@ -1,6 +1,6 @@
 # optimization
 
-!!! done com.alex.optimization.problem.BankAccountProb
+## com.alex.optimization.problem.BankAccountProb
 
 
 ### Use-case: 
