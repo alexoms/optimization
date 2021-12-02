@@ -36,7 +36,7 @@ Processing 50 million accounts takes ~37 seconds and is under the 1-2 minute thr
 
 Set maximum available memory for the JVM to 4000 Megabyte. Constrain in testing to not use more heap memory than defined via parameter: -Xmx4000m
 
-....
+````
 Starting generation of 49999500 accounts
 Completed generation of accounts in 18915 millis
 Starting getJointOwnerAccountList()
@@ -50,7 +50,7 @@ Completed getJointOwnerAccountList in 18969 MILLIS
 Result output of accounts for Test case 1 showing only accounts owned by joint account owners:
 Completed ALL PROCESSING of 49999500 accounts in 37887 MILLIS!
 Used memory (Mb): 3705
-....
+````
 
 ![VisualVM](https://github.com/alexoms/optimization/blob/main/images/Screen%20Shot%202021-12-02%20at%201.49.39%20PM.png)
 
