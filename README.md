@@ -36,6 +36,8 @@ Processing 50 million accounts takes ~37 seconds and is under the 1-2 minute thr
 
 Set maximum available memory for the JVM to 4000 Megabyte. Constrain in testing to not use more heap memory than defined via parameter: -Xmx4000m
 
+Typically, batch job runtimes are in Java 7.  With Java 8+, metaspace auto-sizing replaces permgen.
+
 ````
 Starting generation of 49999500 accounts
 Completed generation of accounts in 18915 millis
