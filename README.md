@@ -2,10 +2,10 @@
 
 ```
 Disclaimer:  The following code is the intellectual property of Alex Chang and is original in every
-way.  If any lines of code are duplicated, Alexander reserves all rights of originality.  The code specifies
-generic business use cases for any business and is not related to any specific company.  Alex may use his code here
-to test developers in data structure optimization knowledge and framework code for helping microservice developers
-build a foundation of knowledge.
+way.  If any lines of code are duplicated, Alexander reserves all rights of originality.  The code 
+specifies generic business use cases for any business and is not related to any specific company.  
+Alex may use his code here to test developers in data structure optimization knowledge and framework 
+code for helping microservice developers build a foundation of knowledge.
 ```
 
 
@@ -13,12 +13,24 @@ build a foundation of knowledge.
 
 ### Use-case: 
 
-Manual joining of banking account information
+Identifying joint account ownership by secondary account owners
 
 
 ### Scenario: 
 
-Bank account owners of checking and savings accounts may have joint ownership with family, etc.  A common need is to run a batch job against all the bank accounts to perform some sort of action such as sending an email or assembling marketing metrics.  So we would need to identify programmatically which accounts are owned by the joint account owner.
+An account and account owner, in any business domain may have multiple relationships with other entities.  One interesting scenario is when accounts have multiple ownership.  Let's relate to this by using a limited financial institution model as an example.  
+
+Known dataset characteristics:
+1.  Bank account owners have checking and savings accounts
+2.  Account owners may have joint ownership with other account owners such as family, etc.
+3.  No PII information is available.  Simply account ids, account type, account owner id, and joint account owner id.
+
+A common need is to run a batch job against all the bank accounts to perform some sort of action such as sending an email or assembling marketing metrics.  In this example, we want to identify programmatically which accounts are owned by any joint account owners.
+
+In a relational database, we would set a foreign key as the secondary owner account and index account ids.  What if we didn't use a database?  Below is a way to manually join in memory account datasets.
+
+### Outcome:
+We need a resultset of only account objects owned solely by the account owners who are joint owners of a different account sorted against most recently created account ids at the top.
 
 
 ### Components:
