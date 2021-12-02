@@ -13,7 +13,7 @@ code for helping microservice developers build a foundation of knowledge.
 
 ### Use-case: 
 
-Identifying joint account ownership by secondary account owners
+Identifying joint account ownership by secondary account owners, across millions of accounts
 
 
 ### Scenario: 
