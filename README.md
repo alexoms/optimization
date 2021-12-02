@@ -61,3 +61,9 @@ Result output of accounts for Test case 1 showing only accounts owned by joint a
 Completed ALL PROCESSING of 49999500 accounts in 37887 MILLIS!
 
 Used memory (Mb): 3705
+
+![VisualVM](https://github.com/alexoms/optimization/blob/main/images/Screen%20Shot%202021-12-02%20at%201.49.39%20PM.png)
+
+![VisualVM-Meta](https://github.com/alexoms/optimization/blob/main/images/Screen%20Shot%202021-12-02%20at%201.50.02%20PM.png)
+
+![VisualVM-main-thread](https://github.com/alexoms/optimization/blob/main/images/Screen%20Shot%202021-12-02%20at%201.50.48%20PM.png)
