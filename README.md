@@ -52,11 +52,11 @@ A sortable account entity representative of non-PII information.
 
 ### Results:
 
-Processing 50 million accounts takes ~37 seconds and is under the 1-2 minute threshold of a typical financial batch.  The code is condensed into one file for quick view.  
+Processing 50 million accounts takes ~18 seconds and is under the 1 minute threshold of a typical financial batch.  The code is condensed into one file for quick view.  
 
 Set maximum available memory for the JVM to 4000 Megabyte. Constrain in testing to not use more heap memory than defined via parameter: -Xmx4000m
 
-Typically, batch job runtimes are in Java 7.  With Java 8+, metaspace auto-sizing replaces permgen.
+Typically, batch job runtimes in the wild are in Java 7.  With Java 8+, metaspace auto-sizing replaces permgen.
 
 ````
 Starting generation of 49999500 accounts
