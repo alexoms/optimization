@@ -1,19 +1,59 @@
 package com.alex.optimization.problem;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+//import java.lang.instrument;
+
+import org.openjdk.jol.info.ClassLayout;
+import org.openjdk.jol.vm.VM;
+
+
+
 
 public class AccountOwnership {
 
 	private static final long MEGABYTE = 1024L * 1024L;
 	
+	private static final int NR_BITS = Integer.valueOf(System.getProperty("sun.arch.data.model"));
+	private static final int BYTE = 8;
+	private static final int WORD = NR_BITS/BYTE;
+	private static final int MIN_SIZE = 16; 
+	
 	public static long bytesToMegabytes(long bytes) {
 		return bytes / MEGABYTE;
 	}
-    
+	
+	public static int sizeOf(Class src){
+	    //
+	    // Get the instance fields of src class
+	    // 
+	    List<Field> instanceFields = new LinkedList<Field>();
+	    do{
+	        if(src == Object.class) return MIN_SIZE;
+	        for (Field f : src.getDeclaredFields()) {
+	            if((f.getModifiers() & Modifier.STATIC) == 0){
+	                instanceFields.add(f);
+	            }
+	        }
+	        src = src.getSuperclass();
+	    }while(instanceFields.isEmpty());
+	    //
+	    // Get the field with the maximum offset
+	    //  
+	    long maxOffset = 0;
+	    for (Field f : instanceFields) {
+	        long offset = UtilUnsafe.UNSAFE.objectFieldOffset(f);
+	        if(offset > maxOffset) maxOffset = offset; 
+	    }
+	    return  (((int)maxOffset/WORD) + 1)*WORD; 
+	}
+	
 	// retrieves list of accounts which are owned by the joint owners of other accounts
 	public static List<Account> getJointOwnerAccountList(List<Account> accountList){
 		List<Account> answer = new ArrayList<Account>();
@@ -152,6 +192,7 @@ public class AccountOwnership {
 		long timeElapsed = Duration.between(start, finish).toMillis();
 		System.out.println("Completed generation of accounts in " + timeElapsed + " millis");
 		
+		
 		// Display initial list for test case 1
 		//System.out.println("Initial list of accounts for Test case 1:");
 		//for (Account item : testCase1AccountList) {
@@ -182,6 +223,11 @@ public class AccountOwnership {
         long memory = runtime.totalMemory() - runtime.freeMemory();
         //System.out.println("Used memory (bytes): " + memory);
         System.out.println("Used memory (M): " + bytesToMegabytes(memory));
+        //System.out.println("testCase1AccountList size (bytes): " + sizeOf(testCase1AccountList.getClass()));
+        //System.out.println("testCase1ResultList size (bytes): " + sizeOf(testCase1ResultList.getClass()));
+        System.out.println(VM.current().details());
+        System.out.println(ClassLayout.parseInstance(testCase1AccountList.get(1)).toPrintable());
+        
 	}
 
 	public static class Account implements Comparable<Object> {
