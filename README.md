@@ -91,6 +91,7 @@ OFF  SZ               TYPE DESCRIPTION                VALUE
  20   4   java.lang.String Account.accountType        (object)
 Instance size: 24 bytes
 Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
+24 bytes x 49999500 accounts = 1.199988 GB
 ````
 
 ![VisualVM](https://github.com/alexoms/optimization/blob/main/images/Screen%20Shot%202021-12-02%20at%201.49.39%20PM.png)
