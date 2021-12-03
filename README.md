@@ -72,6 +72,25 @@ Completed getJointOwnerAccountList in 18969 MILLIS
 Result output of accounts for Test case 1 showing only accounts owned by joint account owners:
 Completed ALL PROCESSING of 49999500 accounts in 37887 MILLIS!
 Used memory (Mb): 3705
+# Running 64-bit HotSpot VM.
+# Using compressed oop with 3-bit shift.
+# Using compressed klass with 3-bit shift.
+# WARNING | Compressed references base/shifts are guessed by the experiment!
+# WARNING | Therefore, computed addresses are just guesses, and ARE NOT RELIABLE.
+# WARNING | Make sure to attach Serviceability Agent to get the reliable addresses.
+# Objects are 8 bytes aligned.
+# Field sizes by type: 4, 1, 1, 2, 2, 4, 4, 8, 8 [bytes]
+# Array element sizes: 4, 1, 1, 2, 2, 4, 4, 8, 8 [bytes]
+
+com.alex.optimization.problem.AccountOwnership$Account object internals:
+OFF  SZ               TYPE DESCRIPTION                VALUE
+  0   8                    (object header: mark)      0x0000000000000005 (biasable; age: 0)
+  8   4                    (object header: class)     0x0016f6d2
+ 12   4   java.lang.String Account.accountUser        (object)
+ 16   4   java.lang.String Account.jointAccountUser   (object)
+ 20   4   java.lang.String Account.accountType        (object)
+Instance size: 24 bytes
+Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
 ````
 
 ![VisualVM](https://github.com/alexoms/optimization/blob/main/images/Screen%20Shot%202021-12-02%20at%201.49.39%20PM.png)
